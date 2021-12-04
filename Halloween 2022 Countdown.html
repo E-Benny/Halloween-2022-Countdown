@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title>Halloween 2022 Countdown</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+<style>
+   #demo {
+  font-family: 'Creepster', cursive; /*The Creepster font gives the Halloween look */
+  font-size: 55px;
+  display: flex;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  top: 100px;
+  bottom: 100px;
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1603751901720-b0a1fe00c9e7?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNDM0MjY5Nw&ixlib=rb-1.2.1&q=85");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: white;
+  font-family: 'Creepster', cursive;
+  display: flex;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  top: 100px;
+  bottom: 100px;
+  font-size: 55px;
+} 
+</style>
+<script>
+  // Set the date we're counting down to
+var countDownDate = new Date("Oct 31, 2022 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);  
+</script>
+</head>
+<body>
+   <!--This code was developed and designed by E-BENNY -->
+<h1>The Exodus</h1>
+<p id="demo"></p>
+<!--The "demo" is to allow the JavaScript Code to have something to modify--> 
+</body>
+</html>
